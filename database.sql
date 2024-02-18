@@ -1,13 +1,3 @@
-DO $$ 
-BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'launchstore') THEN
-        CREATE DATABASE launchstore;
-    END IF;
-END $$;
-
-CREATE DATABASE IF NOT EXISTS launchstore;
-
-
 CREATE TABLE "products" (
   "id" SERIAL PRIMARY KEY,
   "category_id" int NOT NULL,

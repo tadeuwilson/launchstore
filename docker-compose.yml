@@ -7,19 +7,19 @@ services:
     environment:
       POSTGRES_PASSWORD: password
     container_name: launchstore
-    depends_on:
-      - postgres
+    # depends_on:
+    #   - postgres
 
-  postgres:
-    # build:
-    #   dockerfile: dockerfile-postgres
-    image: postgres
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_PASSWORD: password
-      # POSTGRES_DB: launchstore
-    container_name: postgres
-    # volumes:
-    #   - ./database.sql:/app/database.sql
-  # command: /app/database.js
+  # postgres:
+  #   # build:
+  #   #   dockerfile: dockerfile-postgres
+  #   image: postgres
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     POSTGRES_PASSWORD: password
+  #     # POSTGRES_DB: launchstore
+  #   container_name: postgres
+  #   # volumes:
+  #   #   - ./database.sql:/app/database.sql
+  # # command: /app/database.js
