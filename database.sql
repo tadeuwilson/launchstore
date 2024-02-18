@@ -1,3 +1,13 @@
+DO $$ 
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'launchstore') THEN
+        CREATE DATABASE launchstore;
+    END IF;
+END $$;
+
+CREATE DATABASE IF NOT EXISTS launchstore;
+
+
 CREATE TABLE "products" (
   "id" SERIAL PRIMARY KEY,
   "category_id" int NOT NULL,
@@ -100,7 +110,7 @@ DELETE FROM products;
 DELETE FROM files;
 
 -- restart sequence auto increment from tables ids
-ALTER SEQUENCE user_id_seq RESTART WITH 1;
+-- ALTER SEQUENCE user_id_seq RESTART WITH 1;
 ALTER SEQUENCE products_id_seq RESTART WITH 1;
 ALTER SEQUENCE files_id_seq RESTART WITH 1;
 
